@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import { Alert } from "react-bootstrap";
 
-// Define the form values interface
+// Define formValues
 interface FormValues {
   fullName: string;
   subject: string;
@@ -12,7 +12,7 @@ interface FormValues {
   body: string;
 }
 
-// Define the validation schema using Yup
+// Define with Yup
 const contactSchema = Yup.object().shape({
   fullName: Yup.string()
     .required("Full name is required")
@@ -31,7 +31,6 @@ const contactSchema = Yup.object().shape({
 function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Initialize the form
   const {
     register,
     handleSubmit,
@@ -41,7 +40,6 @@ function Contact() {
     resolver: yupResolver(contactSchema),
   });
 
-  // Handle form submission
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log("Form Data:", data);
     reset();

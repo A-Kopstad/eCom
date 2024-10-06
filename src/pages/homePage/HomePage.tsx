@@ -34,7 +34,7 @@ function HomePage() {
     return <div>{error}</div>;
   }
 
-  // Filter products based on the search term
+  // Filter products
   const filteredProducts = products.filter(product => 
     product.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
