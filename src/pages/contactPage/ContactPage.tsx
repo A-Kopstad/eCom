@@ -58,7 +58,7 @@ function Contact() {
         {/* Full Name Field */}
         <div className="mb-3">
           <label htmlFor="fullName" className="form-label">
-            Full Name *
+            Full Name 
           </label>
           <input
             type="text"
@@ -74,7 +74,7 @@ function Contact() {
         {/* Subject Field */}
         <div className="mb-3">
           <label htmlFor="subject" className="form-label">
-            Subject *
+            Subject 
           </label>
           <input
             type="text"
@@ -90,7 +90,7 @@ function Contact() {
         {/* Email Field */}
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
-            Email *
+            Email 
           </label>
           <input
             type="email"
@@ -103,10 +103,10 @@ function Contact() {
           )}
         </div>
 
-        {/* Body Field */}
+        {/* Message Field */}
         <div className="mb-3">
           <label htmlFor="body" className="form-label">
-            Body *
+            Message
           </label>
           <textarea
             id="body"
