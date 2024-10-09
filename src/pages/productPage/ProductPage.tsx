@@ -66,70 +66,74 @@ function ProductPage() {
   
     // Render product details
     return (
-        <div className="container mt-4">
-  <div className="row">
-    <div className="col-md-6">
-      <img 
-        src={product?.image?.url} 
-        alt={product?.image?.alt || 'Product Image'} 
-        className="img-fluid rounded shadow product-img" 
-      />
-    </div>
-    <div className="col-md-6">
-      <h1>{product?.title || 'Product Title'}</h1>
-      <p className="fs-5">{product?.description || 'No description available.'}</p>
-      <p className="fs-5">
-        Price: 
-        {product?.price && product?.discountedPrice ? (
-          product.discountedPrice < product.price ? (
-            <>
-              <span style={{ textDecoration: 'line-through', marginRight: '5px' }}>
-                ${product.price.toFixed(2)}
-              </span>
-              <p className='fs-5'> ${product.discountedPrice.toFixed(2)}</p>
-            </>
-          ) : (
-            <p className='fs-5'>${product.discountedPrice.toFixed(2)}</p>
-          )
-        ) : (
-          <p className='fs-5'>Price not available</p>
-        )}
-      </p>
-      <p className="fs-5">Rating: <p className='fs-5'>{product?.rating !== undefined ? product.rating : 'N/A'}</p></p>
-      <button 
-        className="btn btn-primary mt-3" 
-        onClick={handleAddToCart}
-      >
-        Add to Cart
-      </button>
-    </div>
-  </div>
-  <hr />
-  <p className='fs-4'>Tags:</p>
-  <ul className="list-inline">
-    {product?.tags?.map((tag: string, index: number) => (
-      <li key={index} className="list-inline-item">
-        <span className="badge bg-secondary">{tag}</span>
-      </li>
-    ))}
-  </ul>
-  <p className='fs-4'>Reviews:</p>
-  {product?.reviews?.length ? ( 
-    <ul className="list-unstyled">
-      {product.reviews.map((review) => ( 
-        <li key={review.id} className="mb-4 review-item">
-          <div className="border p-3 rounded">
-            <p className='fs-5'>{review.username}:</p> {review.description} (Rating: {review.rating})
+      <div className="container mt-4">
+          <div className="row">
+              <div className="col-md-6">
+                  <img 
+                      src={product?.image?.url} 
+                      alt={product?.image?.alt || 'Product Image'} 
+                      className="img-fluid rounded shadow product-img" 
+                  />
+              </div>
+              <div className="col-md-6">
+                  <h1>{product?.title || 'Product Title'}</h1>
+                  <p className="fs-5">{product?.description || 'No description available.'}</p>
+                  <p className="fs-5">
+                      Price: 
+                      {product?.price && product?.discountedPrice ? (
+                          product.discountedPrice < product.price ? (
+                              <>
+                                  <span className="text-decoration-line-through">
+                                      ${product.price.toFixed(2)}
+                                  </span>
+                                  <div>
+                                      ${product.discountedPrice.toFixed(2)}
+                                  </div>
+                              </>
+                          ) : (
+                              <span>${product.discountedPrice.toFixed(2)}</span>
+                          )
+                      ) : (
+                          <span>Price not available</span>
+                      )}
+                  </p>
+                  <p className="fs-5">
+                      Rating: <span className='fs-5'>{product?.rating !== undefined ? product.rating : 'N/A'}</span>
+                  </p>
+                  <button 
+                      className="btn btn-primary mt-3" 
+                      onClick={handleAddToCart}
+                  >
+                      Add to Cart
+                  </button>
+              </div>
           </div>
-        </li>
-      ))}
-    </ul>
-  ) : (
-    <p>No reviews available.</p>
-  )}
-</div>
-
-    );
-  }
+          <hr />
+          <p className='fs-4'>Tags:</p>
+          <ul className="list-inline">
+              {product?.tags?.map((tag: string, index: number) => (
+                  <li key={index} className="list-inline-item">
+                      <span className="badge bg-secondary">{tag}</span>
+                  </li>
+              ))}
+          </ul>
+          <p className='fs-4'>Reviews:</p>
+          {product?.reviews?.length ? ( 
+              <ul className="list-unstyled">
+                  {product.reviews.map((review) => ( 
+                      <li key={review.id} className="mb-4 review-item">
+                          <div className="border p-3 rounded">
+                              <p className='fs-5'>{review.username}:</p> 
+                              {review.description} (Rating: {review.rating})
+                          </div>
+                      </li>
+                  ))}
+              </ul>
+          ) : (
+              <p>No reviews available.</p>
+          )}
+      </div>
+  );
+}
   
   export default ProductPage;

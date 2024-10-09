@@ -65,14 +65,14 @@ function HomePage() {
               />
               <div className="card-body">
                 <p className="card-title fs-4">{product.title}</p>
-                <p className="card-text">
+                <p className="card-text ">
                   Price: 
                   {product.discountedPrice < product.price ? (
                     <>
-                      <span>
+                      <span className='text-decoration-line-through'>
                         ${product.price.toFixed(2)}
                       </span>
-                      <span className='fs-5'>${product.discountedPrice.toFixed(2)}</span>
+                      <div className='fs-5'>${product.discountedPrice.toFixed(2)}</div>
                     </>
                   ) : (
                     <span className='fs-5'>${product.discountedPrice.toFixed(2)}</span>
