@@ -69,13 +69,13 @@ function HomePage() {
                   Price: 
                   {product.discountedPrice < product.price ? (
                     <>
-                      <span style={{ textDecoration: 'line-through', marginRight: '5px' }}>
+                      <span>
                         ${product.price.toFixed(2)}
                       </span>
-                      <p className='fs-5'>${product.discountedPrice.toFixed(2)}</p>
+                      <span className='fs-5'>${product.discountedPrice.toFixed(2)}</span>
                     </>
                   ) : (
-                    <p className='fs-5'>${product.discountedPrice.toFixed(2)}</p>
+                    <span className='fs-5'>${product.discountedPrice.toFixed(2)}</span>
                   )}
                 </p>
                 <Link to={`/products/${product.id}`} className="btn btn-primary">View Product</Link>
