@@ -86,9 +86,9 @@ function ProductPage() {
                                   <span className="text-decoration-line-through">
                                       ${product.price.toFixed(2)}
                                   </span>
-                                  <div>
+                                  <span className='d-block'>
                                       ${product.discountedPrice.toFixed(2)}
-                                  </div>
+                                  </span>
                               </>
                           ) : (
                               <span>${product.discountedPrice.toFixed(2)}</span>

@@ -72,7 +72,7 @@ function HomePage() {
                       <span className='text-decoration-line-through'>
                         ${product.price.toFixed(2)}
                       </span>
-                      <div className='fs-5'>${product.discountedPrice.toFixed(2)}</div>
+                      <span className='fs-5 d-block'>${product.discountedPrice.toFixed(2)}</span>
                     </>
                   ) : (
                     <span className='fs-5'>${product.discountedPrice.toFixed(2)}</span>
