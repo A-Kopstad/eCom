@@ -49,6 +49,8 @@ Then run code
 npm run build
 ```
 
+## Contributing
+If you would like to contribute, please make an open pull request. 
 
 ## Contact
 
